@@ -9,6 +9,7 @@
   <body>
     <div id="app">
       <app-header v-bind:title="str"></app-header>
+      <app-contents v-on:change="changeStr"></app-contents>
     </div>
   </body>
 
@@ -20,6 +21,11 @@
       data: {
         str: "프롭스 문자열",
       },
+      methods: {
+        changeStr: function () {
+          this.str = "변경됐습니다.";
+        },
+      },
 
       components: {
         //컴포넌트 이름: 컴포넌트 내용
@@ -27,6 +33,16 @@
           // app-header 컴포넌트 내용
           props: ["title"],
           template: "<h1>{{title}}</h1>",
+        },
+
+        "app-contents": {
+          template:
+            "<main>컨텐츠<button v-on:click='change'>메세지 변경</button></main>",
+          methods: {
+            change() {
+              this.$emit("change");
+            },
+          },
         },
       },
     });
