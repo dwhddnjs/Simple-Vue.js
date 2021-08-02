@@ -14,9 +14,10 @@
       </div>
       <button v-bind:disabled='!isUsernameVaild' type='submit'>로그인</button>
     </form>
-    <p v-if='isError'>올바르지 않은 ID입니다</p>
-    <p v-if="isUsernameVaild">이메일 형식이 맞습니다</p>
-    <ToastPopup></ToastPopup>
+    <p v-if='isSuccess'>로그인이 되었습니다</p>
+    <!-- <p v-if='isError'>올바르지 않은 ID입니다</p>
+    <p v-if="isUsernameVaild">이메일 형식이 맞습니다</p> -->
+    <ToastPopup v-bind:open='isSuccess'></ToastPopup>
   </div>
 </template>
 
