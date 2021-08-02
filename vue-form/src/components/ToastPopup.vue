@@ -1,16 +1,21 @@
 <template>
-    <div class= 'toast' v-bind:class="{ 'animation':true}">
-        토스트 팝업
+    <div class= 'toast' v-bind:class="{ 'animation': open }">
+        로그인 완료 되었습니다
     </div>
 </template>
 
 <script>
+let timer;
+
+
 export default {
     props: ['open'],
     watch: {
         open(newValue) {
           if(newValue) {
               console.log('토스트 팝업 열기')
+            clearTimeout(timer)
+            timer = setTimeout(()=>this.$emit('close'),2000)
           }
       }
     }
@@ -18,7 +23,7 @@ export default {
 </script>
 
 <style scoped>
-    div .toast  {
+    .toast  {
      width: 200px;
      height: 40px;
      background: black;

@@ -17,7 +17,7 @@
     <p v-if='isSuccess'>로그인이 되었습니다</p>
     <!-- <p v-if='isError'>올바르지 않은 ID입니다</p>
     <p v-if="isUsernameVaild">이메일 형식이 맞습니다</p> -->
-    <ToastPopup v-bind:open='isSuccess'></ToastPopup>
+    <ToastPopup v-bind:open='isSuccess' v-on:close='isSuccess = false'></ToastPopup>
   </div>
 </template>
 
