@@ -18,9 +18,9 @@ export default {
         animation: loading 1s linear
     }
 
-    /* .complete {
+    .complete {
         width: 100%;
-    } */
+    }
 
     @keyframes loading {
         0%{
