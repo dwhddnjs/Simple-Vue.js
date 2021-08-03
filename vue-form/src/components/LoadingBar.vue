@@ -1,6 +1,5 @@
 <template>
-  <div>
-      height
+  <div class='progress'>
   </div>
 </template>
 
@@ -10,6 +9,28 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+    .progress {
+        height: 5px;
+        background: lime;
+        width: 50%;
+        transition: width 700ms linear;
+        animation: loading 1s linear
+    }
 
+    /* .complete {
+        width: 100%;
+    } */
+
+    @keyframes loading {
+        0%{
+            width: 0%;
+        }
+        50% {
+            width: 50%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
 </style>
