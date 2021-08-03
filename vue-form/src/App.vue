@@ -1,5 +1,6 @@
 <template>
   <div>
+    <loading-bar></loading-bar>
     <form v-on:submit.prevent='submitForm'>
       <div>
         <label for="username">ID: </label>
@@ -23,6 +24,8 @@
 
 <script>
 import ToastPopup from '@/components/ToastPopup';
+import LoadingBar from '@/components/LoadingBar';
+
 
 // 이메일 형식 체크 함수
 function validateEmail(email) {
@@ -32,7 +35,8 @@ function validateEmail(email) {
 
 export default {
   components: {
-    'ToastPopup': ToastPopup
+    ToastPopup,
+    LoadingBar
   },
   data() {
     return {
@@ -72,3 +76,5 @@ export default {
   border: 1px solid red;
 }
 </style>
+
+//finished Vue
