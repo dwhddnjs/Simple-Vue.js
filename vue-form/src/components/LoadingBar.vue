@@ -11,10 +11,11 @@ export default {
 
 <style scoped>
     .progress {
-        height: 5px;
+        height: 10px;
         background: lime;
         width: 50%;
         transition: width 700ms linear;
+        border-radius: 10px;
         animation: loading 1s linear
     }
 
