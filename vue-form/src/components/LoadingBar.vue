@@ -11,7 +11,7 @@ export default {
 
 <style scoped>
     .progress {
-        height: 20px;
+        height: 30px;
         background: lime;
         width: 50%;
         transition: width 700ms linear;
